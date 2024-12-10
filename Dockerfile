@@ -3,4 +3,5 @@ WORKDIR /bot
 COPY requirements.txt /bot/
 RUN pip install -r requirements.txt
 EXPOSE 8080
-COPY . /botCMD python main.py
+COPY . /bot
+CMD python main.py
