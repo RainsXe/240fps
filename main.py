@@ -21,8 +21,4 @@ async def on_message(message):
         choice = random.choice(unsei)
         await message.channel.send(choice)
 
-TOKEN = os.getenv("TOKEN")
-if TOKEN:
-    client.run(os.getenv('TOKEN'))
-else:
-    print("Tokenが見つかりませんでした")
+client.run(os.getenv('TOKEN'))
