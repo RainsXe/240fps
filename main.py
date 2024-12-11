@@ -1,6 +1,7 @@
 import discord
 import os
-from os.path import join, dirname
+import random
+from os.path import join, dirname, defpath
 from dotenv import load_dotenv
 
 client = discord.Client(intents=discord.Intents.default())
@@ -13,6 +14,12 @@ load_dotenv(dotenv_path)
 async def on_ready():
     print('ログインしました')
 
+@client.event
+async def on_message(message):
+    if message.content == "!占い":
+        unsei = ["大吉", "中吉", "吉", "末吉", "凶", "大凶"]
+        choice = random.choice(unsei)
+        await message.channel.send(choice)
 
 TOKEN = os.getenv("TOKEN")
 if TOKEN:
