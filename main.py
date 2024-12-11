@@ -1,5 +1,6 @@
 import discord
 import random
+import os
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -26,6 +27,10 @@ async def on_message(message):
     elif message.content == "!ping":
         raw_ping = round(client.latency * 1000)  # ミリ秒に変換
         await message.reply(f"Pong!\n{raw_ping}ms")
-        
 
-client.run('MTMxNTgwNjg2OTk3NzA0Mjk3NA.GNW6DH.YDFJe3Pm6KkG6EB6uKekldOCAfeJrM7CgvDmig')
+
+TOKEN = os.getenv("DISCORD_TOKEN")
+if TOKEN:
+    client.run(TOKEN)
+else:
+    print("Tokenが見つかりませんでした")

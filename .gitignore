@@ -130,6 +130,8 @@ celerybeat.pid
 # Rope project settings
 .ropeproject
 
+.env
+
 # mkdocs documentation
 /site
 
