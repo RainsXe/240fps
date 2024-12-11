@@ -1,20 +1,21 @@
 import discord
 import os
-import random
+from os.path import join, dirname
+from dotenv import load_dotenv
 
-client = discord.Client()
+client = discord.Client(intents=discord.Intents.default())
+
+load_dotenv(verbose=True)
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 
 @client.event
 async def on_ready():
-    print("ログイン完了")
+    print('ログインしました')
 
-@client.event
-async def on_message(message):
-    # !などはwake word
-    # 普通の発言などでボットが動かないように記号を頭につけてください。
-    if message.content == "!占い":
-        unsei = ["大吉", "中吉", "吉", "末吉", "小吉", "凶", "大凶"]
-        choice = random.choice(unsei)
-        await message.channel.send(choice)
 
-client.run(os.getenv('TOKEN'))
+TOKEN = os.getenv("TOKEN")
+if TOKEN:
+    client.run(os.getenv('TOKEN'))
+else:
+    print("Tokenが見つかりませんでした")
