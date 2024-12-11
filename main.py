@@ -33,4 +33,4 @@ async def on_message(message):
         #送信
         await message.reply(f"Pong!\n{raw_ping}ms")
 
-client.run(MTMxNTgwNjg2OTk3NzA0Mjk3NA.GNW6DH.YDFJe3Pm6KkG6EB6uKekldOCAfeJrM7CgvDmig)
+client.run('MTMxNTgwNjg2OTk3NzA0Mjk3NA.GNW6DH.YDFJe3Pm6KkG6EB6uKekldOCAfeJrM7CgvDmig')
