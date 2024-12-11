@@ -27,7 +27,7 @@ async def on_message(message):
         #ping値を秒単位で取得
         raw_ping = client.latency
         
-        #ミリ秒に変換まるめ
+        #ミリ秒に変換
         raw_ping = round(raw_ping * 1000)
         
         #送信
