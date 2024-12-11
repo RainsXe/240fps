@@ -6,7 +6,6 @@ intents = discord.Intents.default()
 intents.message_content = True
 client = discord.Client(intents=intents)
 
-
 @client.event  # 起動時
 async def on_ready():
     print('ログインしました')
