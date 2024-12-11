@@ -28,6 +28,15 @@ async def on_message(message):
         raw_ping = round(client.latency * 1000)  # ミリ秒に変換
         await message.reply(f"Pong!\n{raw_ping}ms")
 
+    elif message.content == "!RandAtkOpe":
+        atkOpe = ["STRIKER", "DEMOS", "RAM", "BRAVA", "GRIM", "SENS", "OSA", "FLORES", "ZERO", "ACE", "IANA", "KALI", "AMARU",
+                  "NOKK", "GRIDLOCK", "NOMAD", "MAVERICK","LION", "FINKA", "DOKKAEBI", "ZOFIA", "YING", "JACKAL", "HIBANA",
+                  "CAPITAO", "BLACKBEARD", "BUCK", "SLEDGE", "THATCHER", "ASH", "THERMITE", "MONTAGNE", "TWITCH", "BLITZ",
+                  "IQ", "FUZE", "GLAZ"]
+
+        choice = random.choice(atkOpe)
+        await message.channel.send(choice)
+
 
 TOKEN = os.getenv("DISCORD_TOKEN")
 if TOKEN:
