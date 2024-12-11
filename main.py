@@ -12,10 +12,6 @@ tree = app_commands.CommandTree(client)
 async def on_ready():
     print('ログインしました')
 
-    # アクティビティを設定
-    new_activity = f"テスト"
-    await client.change_presence(activity=discord.Game(new_activity))
-
     # スラッシュコマンドを同期
     await tree.sync()
 
