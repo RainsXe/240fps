@@ -36,7 +36,6 @@ async def on_message(message):
         choice = random.choice(atkOpe)
         await message.channel.send(choice)
 
-
 TOKEN = os.getenv("DISCORD_TOKEN")
 if TOKEN:
     client.run(TOKEN)
