@@ -1,5 +1,3 @@
-from tkinter.ttk import Treeview
-
 import discord
 import random
 import os
@@ -43,6 +41,7 @@ async def on_message(message):
         await message.reply(f"Pong!\n{raw_ping}ms")
 
 load_dotenv()
+
 TOKEN = os.getenv("DISCORD_TOKEN")
 if TOKEN:
     client.run(TOKEN)
